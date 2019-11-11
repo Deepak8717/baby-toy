@@ -1,0 +1,231 @@
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #5f4e7d;
+}
+
+.wrapper {
+  position: relative;
+  -webkit-transform: translatey(-30%);
+          transform: translatey(-30%);
+}
+
+.head {
+  width: 144px;
+  height: 163px;
+  border-radius: 100px;
+  background: #F0BE99;
+}
+
+.ear-l,
+ear-r {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #F0BE99;
+  position: absolute;
+  bottom: 30px;
+  z-index: -1;
+}
+
+.ear-l::before,
+ear-r::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+}
+
+.ear-l {
+  left: -10px;
+}
+
+.ear-l::before {
+  -webkit-transform: translatex(8px);
+          transform: translatex(8px);
+}
+
+.ear-r {
+  right: -10px;
+}
+
+.ear-r::before {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.eye-l,
+.eye-r {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 15px -5px #EE927D;
+          box-shadow: 0 0 15px -5px #EE927D;
+}
+
+.eye-l::after,
+.eye-r::after {
+  content: "";
+  background: #EE927D;
+  height: 20%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-animation: blink 4s alternate infinite ease;
+          animation: blink 4s alternate infinite ease;
+}
+
+@-webkit-keyframes blink {
+  89% {
+    height: 20%;
+  }
+  90% {
+    height: 60%;
+  }
+  95% {
+    height: 45%;
+  }
+  100% {
+    height: 55%;
+  }
+}
+
+@keyframes blink {
+  89% {
+    height: 20%;
+  }
+  90% {
+    height: 60%;
+  }
+  95% {
+    height: 45%;
+  }
+  100% {
+    height: 55%;
+  }
+}
+
+.eye-l::before,
+.eye-r::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+}
+
+.eye-l {
+  left: 30px;
+}
+
+.eye-r {
+  right: 30px;
+}
+
+.nose {
+  width: 7px;
+  height: 7px;
+  border-radius: 0 0 100px;
+  background: #EE927D;
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  -webkit-transform: translateX(-50%, -50%);
+          transform: translateX(-50%, -50%);
+  -webkit-box-shadow: 10px 0 #EE927D;
+          box-shadow: 10px 0 #EE927D;
+}
+
+.toy {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2E8FBC;
+  border: 5px solid #67BFEC;
+  position: absolute;
+  top: 80%;
+  left: 55%;
+  -webkit-box-shadow: -1px 0 0 1px #024f6e, -3px -3px 0 13px #036187;
+          box-shadow: -1px 0 0 1px #024f6e, -3px -3px 0 13px #036187;
+  -webkit-animation: pluse 0.3s infinite alternate cubic-bezier(0.71, 1.87, 0.03, -0.15);
+          animation: pluse 0.3s infinite alternate cubic-bezier(0.71, 1.87, 0.03, -0.15);
+  -webkit-transition: left .3s ease;
+  transition: left .3s ease;
+}
+
+@-webkit-keyframes pluse {
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes pluse {
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+p {
+  position: absolute;
+  font-size: 150px;
+  color: #EE927D;
+  top: -220px;
+  left: 50px;
+}
+
+span {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 250%;
+  height: 250%;
+  z-index: 10;
+}
+
+span.triangle-t {
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%);
+          clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+span.triangle-t:hover {
+  -webkit-clip-path: none;
+          clip-path: none;
+  z-index: 2;
+}
+
+span.triangle-t:hover ~ .eye-l:before,
+span.triangle-t:hover ~ .eye-r:before {
+  -webkit-transform: translateX(-50%, -80%);
+          transform: translateX(-50%, -80%);
+}
+/*# sourceMappingURL=style.css.map */
